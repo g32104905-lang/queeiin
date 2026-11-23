@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0a0a0a">
+<title>کوئین دلسین | Queen_Delsin</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--o:#e00000;--o2:#ff3b3b;--bg:#0a0a0a;--card:#141414;--line:#2a2a2a;--tx:#eee;--mu:#9a9a9a}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font-family:Vazirmatn,Tahoma,sans-serif;line-height:1.9;overflow-x:hidden}
+a{color:var(--o2);text-decoration:none}
+/* ===== header 3D ===== */
+header{position:sticky;top:0;z-index:50;background:rgba(8,8,8,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--o);padding:8px 14px 10px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px}
+.logo3d{display:inline-block;perspective:700px;direction:ltr;font-weight:800;color:var(--o2);white-space:nowrap}
+#t-logo{font-size:1.45rem}
+.logo3d span{display:inline-block;transform-style:preserve-3d;animation:flip 3.6s ease-in-out infinite;
+ text-shadow:1px 1px 0 color-mix(in srgb,var(--o) 85%,#000),2px 2px 0 color-mix(in srgb,var(--o) 70%,#000),3px 3px 0 color-mix(in srgb,var(--o) 55%,#000),4px 4px 0 color-mix(in srgb,var(--o) 40%,#000),6px 8px 12px rgba(0,0,0,.8)}
+@keyframes flip{0%,100%{transform:rotateY(-22deg) rotateX(8deg) translateZ(0)}50%{transform:rotateY(22deg) rotateX(-8deg) translateZ(12px)}}
+.logoimg{width:34px;height:34px;border-radius:50%;object-fit:cover;vertical-align:middle;margin-left:8px;border:1px solid var(--o)}
+nav{display:flex;gap:9px;overflow-x:auto;order:3;width:100%;padding:8px 4px 10px;perspective:800px;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav a{flex:0 0 auto;display:inline-block;padding:5px 15px;border-radius:10px;background:linear-gradient(#262626,#111);border:1px solid var(--line);color:var(--tx);font-size:.85rem;white-space:nowrap;
+ box-shadow:0 4px 0 #000,0 7px 12px rgba(0,0,0,.55);transform:rotateX(14deg);transition:transform .25s,background .25s,box-shadow .25s,color .25s;animation:bob 3.2s ease-in-out infinite}
+nav a:nth-child(2n){animation-delay:.4s}nav a:nth-child(3n){animation-delay:.8s}
+@keyframes bob{50%{transform:rotateX(14deg) translateY(-2px)}}
+nav a:hover,nav a.on{animation:none;transform:rotateX(0) translateY(-3px) translateZ(14px);background:linear-gradient(var(--o2),var(--o));color:#fff;border-color:var(--o2);
+ box-shadow:0 6px 0 color-mix(in srgb,var(--o) 45%,#000),0 12px 22px color-mix(in srgb,var(--o) 45%,transparent)}
+#admBtn{order:2;margin:0;padding:5px 12px}
+/* ===== buttons ===== */
+.btn{display:inline-block;background:var(--o);color:#fff;border:1px solid var(--o);padding:10px 22px;border-radius:10px;font:600 .95rem Vazirmatn,Tahoma;cursor:pointer;margin-top:16px;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s,background .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 22px color-mix(in srgb,var(--o) 50%,transparent)}
+.btn::after{content:"";position:absolute;top:0;left:-80%;width:45%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.3),transparent);transform:skewX(-20deg);animation:shine 3.8s infinite}
+.btn.sec{background:transparent;color:var(--o2)}
+.btn.sm{padding:5px 12px;margin:2px;font-size:.8rem}
+.btn.red{background:#7a1010;border-color:#7a1010}
+body[data-btn=pill] .btn,body[data-btn=pill] .chip{border-radius:999px}
+body[data-btn=square] .btn,body[data-btn=square] .chip{border-radius:2px}
+body[data-btn=outline] .btn:not(.sec){background:transparent;color:var(--o2)}
+body[data-btn=glow] .btn{box-shadow:0 0 18px color-mix(in srgb,var(--o) 65%,transparent)}
+body[data-btn=d3] .btn{border-radius:12px;background:linear-gradient(var(--o2),var(--o));box-shadow:0 5px 0 color-mix(in srgb,var(--o) 45%,#000),0 9px 16px rgba(0,0,0,.5)}
+body[data-btn=d3] .btn:active{transform:translateY(4px);box-shadow:0 1px 0 color-mix(in srgb,var(--o) 45%,#000)}
+@keyframes shine{0%,60%{left:-80%}100%{left:140%}}
+/* ===== pages ===== */
+.pg{display:none}.pg.on{display:block;animation:pgin .5s both}
+@keyframes pgin{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.hero{position:relative;overflow:hidden;text-align:center;padding:64px 16px 46px;background-size:cover;background-position:center}
+.hero::before{content:"";position:absolute;inset:-40%;background:radial-gradient(circle at 30% 30%,color-mix(in srgb,var(--o) 30%,transparent),transparent 45%),radial-gradient(circle at 75% 70%,color-mix(in srgb,var(--o2) 20%,transparent),transparent 40%);animation:drift 12s ease-in-out infinite alternate;pointer-events:none}
+.hero>*{position:relative}
+@keyframes drift{to{transform:translate(6%,4%) scale(1.1)}}
+.herologo{width:112px;height:112px;border-radius:50%;object-fit:cover;border:3px solid var(--o);box-shadow:0 0 30px color-mix(in srgb,var(--o) 65%,transparent);margin:0 auto 12px;display:block;animation:float 4s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-8px)}}
+.hero h1{font-size:clamp(2.1rem,9vw,3.8rem);line-height:1.3;margin-bottom:4px}
+.hero h2{font-weight:300;color:var(--o2);margin-bottom:12px}
+.hero p{max-width:560px;margin:auto;color:#ccc;white-space:pre-line}
+section{max-width:960px;margin:auto;padding:34px 14px}
+section>h3{font-size:1.4rem;color:var(--o2);margin-bottom:4px;border-right:4px solid var(--o);padding-right:10px}
+.sub{color:var(--mu);margin-bottom:18px;white-space:pre-line}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.card{background:linear-gradient(160deg,var(--card),#0d0d0d);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s}
+.card:hover{transform:translateY(-5px);border-color:var(--o);box-shadow:0 10px 28px color-mix(in srgb,var(--o) 28%,transparent)}
+.card img{width:100%;display:block;max-height:340px;object-fit:cover;cursor:zoom-in}
+.card .b{padding:14px}
+.card h4{color:var(--o2);margin-bottom:2px}
+.card p{color:#ccc;font-size:.92rem;white-space:pre-line}
+.card small{color:var(--mu)}
+.embed{margin-top:10px}.embed iframe,.embed video{max-width:100%}
+.code{background:#050505;border:1px solid #333;border-radius:8px;padding:12px;margin:8px 0;direction:ltr;text-align:left;overflow:auto;white-space:pre-wrap;color:#00ff88;font-size:.82rem}
+/* ===== payment ===== */
+.payc{background:linear-gradient(160deg,#171717,#0b0b0b);border:1px solid var(--o);border-radius:18px;padding:18px;box-shadow:0 0 40px color-mix(in srgb,var(--o) 18%,transparent)}
+.step{font-weight:600;color:var(--o2);margin:12px 0 6px;font-size:.9rem}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 8px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;background:#1a1a1a;color:var(--tx);border:1px solid var(--line);border-radius:12px;padding:8px 18px;font:600 .9rem Vazirmatn,Tahoma;cursor:pointer;transition:.2s}
+.chip:hover{border-color:var(--o)}
+.chip.on{background:linear-gradient(var(--o2),var(--o));color:#fff;border-color:var(--o2);transform:translateY(-2px);box-shadow:0 6px 16px color-mix(in srgb,var(--o) 40%,transparent)}
+.addrbox{background:#050505;border:1px dashed #555;border-radius:12px;padding:12px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}
+.addrbox code{direction:ltr;text-align:left;word-break:break-all;color:#fff;font-size:.85rem;flex:1;min-width:200px}
+.addrbox .btn{margin:0;padding:6px 16px}
+.txrow{display:flex;gap:8px;flex-wrap:wrap}
+.txrow input{flex:1;min-width:200px;direction:ltr}
+.txrow .btn{margin:0}
+.stars{text-align:center;background:linear-gradient(160deg,#1c0000,#0f0f0f);border:1px solid var(--o);border-radius:18px;padding:28px}
+.stars .big{font-size:2.6rem}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:10px}
+details[open]{border-color:var(--o)}
+summary{cursor:pointer;color:var(--o2);font-weight:600}
+details p{margin-top:8px;color:#ccc;white-space:pre-line}
+.contacts{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.contacts .btn{margin:0}
+footer{text-align:center;color:var(--mu);padding:24px;border-top:1px solid var(--line);font-size:.85rem;margin-top:20px}
+footer span{cursor:pointer}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:300;display:none;align-items:center;justify-content:center;padding:10px}
+#lb img{max-width:100%;max-height:100%;border-radius:10px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+/* ===== admin ===== */
+#adm{position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:100;display:none;overflow:auto}
+#adm .box{max-width:860px;margin:14px auto;background:#101010;border:1px solid var(--o);border-radius:14px;padding:14px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 14px}
+.tabs button{background:#1d1d1d;color:var(--tx);border:1px solid var(--line);border-radius:8px;padding:6px 12px;font:inherit;cursor:pointer}
+.tabs button.on{background:var(--o);color:#fff}
+.f{margin-bottom:10px}
+.f label{display:block;font-size:.8rem;color:var(--o2)}
+input,textarea,select{width:100%;background:#1a1a1a;color:#fff;border:1px solid var(--line);border-radius:8px;padding:9px;font:inherit}
+input[type=color]{height:42px;padding:3px}
+textarea{min-height:80px}
+.it{border:1px dashed #444;border-radius:10px;padding:10px;margin-bottom:12px}
+.it .it{border-color:#333;background:#0c0c0c}
+.it img{max-width:140px;max-height:100px;border-radius:8px;display:block;margin:6px 0}
+.row{display:flex;gap:6px;flex-wrap:wrap}
+#toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:var(--o);color:#fff;padding:8px 18px;border-radius:20px;z-index:400;display:none;max-width:90%;text-align:center}
+</style>
+</head>
+<body data-btn="round">
+<header>
+  <a class="logo3d" id="t-logo" href="#home"></a>
+  <button class="btn sm sec" id="admBtn" aria-label="مدیریت">⚙️</button>
+  <nav id="nav"></nav>
+</header>
+<main id="site"></main>
+<footer><span id="adminOpen">© <span id="t-foot"></span></span></footer>
+<div id="lb"><img alt=""></div>
+<div id="adm"><div class="box" id="admbox"></div></div>
+<div id="toast"></div>
+
+<script>
+/* ================= داده‌های پیش‌فرض (همه از پنل مدیریت قابل ویرایش) ================= */
+const DEF={
+ siteName:"کوئین دلسین",siteEn:"Queen_Delsin",logo:"",heroImage:"",
+ heroTitle:"Queen_Delsin",heroSub:"کوئین دلسین",
+ heroText:"به قلمرو من خوش اومدی.\nپرداخت امن و سریع با ارز دیجیتال.",heroBtn:"پرداخت با ارز دیجیتال",
+ tgUser:"Queen_Delsin",
+ cryptoTitle:"💎 پرداخت ارز دیجیتال",
+ cryptoText:"۱) ارز و شبکه رو انتخاب کن  ۲) به آدرس نمایش‌داده‌شده واریز کن  ۳) هش تراکنش رو بفرست.",
+ txLabel:"هش تراکنش (TXID)",txBtn:"ارسال هش به تلگرام",
+ coins:[
+  {coin:"USDT",nets:[{name:"TRC20",address:""},{name:"BEP20",address:""},{name:"ERC20",address:""}]},
+  {coin:"TRX",nets:[{name:"TRC20",address:""}]},
+  {coin:"BTC",nets:[{name:"Bitcoin",address:""}]},
+  {coin:"ETH",nets:[{name:"ERC20",address:""}]},
+  {coin:"TON",nets:[{name:"TON",address:""}]},
+  {coin:"BNB",nets:[{name:"BEP20",address:""}]},
+  {coin:"LTC",nets:[{name:"Litecoin",address:""}]}
+ ],
+ navHome:"خانه",navPosts:"پست‌ها",navSources:"سورس‌ها",navReviews:"رضایت توله هام",navStars:"استارز",navFaq:"سوالات",navContact:"تماس",
+ postsTitle:"آخرین پست‌ها",postsSub:"",
+ sourcesTitle:"سورس‌ها",sourcesSub:"",
+ reviewsTitle:"رضایت توله هام",reviewsSub:"نظرات و رضایت‌نامه‌ها",
+ starsTitle:"پرداخت با استارز تلگرام",starsText:"از طریق Telegram Stars پرداخت کن و رسید رو بفرست.",starsBtn:"پرداخت با Stars",starsLink:"https://t.me/Queen_Delsin",
+ faqTitle:"سوالات متداول",faqSub:"",
+ contactTitle:"ارتباط با من",contactText:"از طریق راه‌های زیر پیام بده.",
+ footer:"Queen_Delsin — همه حقوق محفوظ است",
+ theme:{c1:"#e00000",c2:"#ff3b3b",bg:"#0a0a0a",card:"#141414",btn:"round"},
+ posts:[{title:"اولین پست",text:"این یک متن نمونه است. از پنل مدیریت ویرایشش کن.",image:"",source:"",html:"",date:""}],
+ sources:[{title:"نمونه سورس",code:"console.log('Queen_Delsin')"}],
+ reviews:[{name:"نمونه",text:"متن رضایت نمونه",image:""}],
+ faqs:[{q:"چطور پرداخت کنم؟",a:"از صفحه‌ی اصلی ارز و شبکه رو انتخاب کن، واریز کن و هش تراکنش رو بفرست."}],
+ contacts:[{label:"تلگرام",url:"https://t.me/Queen_Delsin"}]
+};
+const clone=o=>JSON.parse(JSON.stringify(o));
+let D=clone(DEF),sel={ci:0,ni:0},cur="";
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const safeUrl=u=>/^(https?:|tg:|\/|data:image)/i.test(u||"")?u:"";
+function toast(m){const t=$("#toast");t.textContent=m;t.style.display="block";clearTimeout(toast.t);toast.t=setTimeout(()=>t.style.display="none",2600)}
+function norm(){D.theme={...DEF.theme,...(D.theme||{})};if(!Array.isArray(D.coins))D.coins=clone(DEF.coins);D.coins.forEach(c=>{if(!Array.isArray(c.nets))c.nets=[]});["posts","sources","reviews","faqs","contacts"].forEach(k=>{if(!Array.isArray(D[k]))D[k]=[]})}
+function theme(){const t=D.theme,s=document.documentElement.style;s.setProperty("--o",t.c1);s.setProperty("--o2",t.c2);s.setProperty("--bg",t.bg);s.setProperty("--card",t.card);document.body.dataset.btn=t.btn||"round"}
+/* ================= لود / ذخیره ================= */
+async function load(){
+  let l=null;try{l=JSON.parse(localStorage.getItem("qd_data")||"null")}catch(_){}
+  if(l)D={...D,...l};
+  else{try{const r=await fetch("data.json?"+Date.now());if(r.ok)D={...D,...await r.json()}}catch(_){}}
+  norm();render();route();
+  if(location.hash==="#admin")setTimeout(login,300);
+}
+function save(){
+  try{localStorage.setItem("qd_data",JSON.stringify(D))}catch(e){toast("حافظه پر است (عکس‌ها زیادند)");return}
+  render();route();toast("ذخیره شد ✓  برای نمایش به همه: تنظیمات ← دانلود data.json ← آپلود در گیت‌هاب");
+}
+/* ================= نمایش سایت ================= */
+function t3d(txt){return [...String(txt)].map((c,i)=>`<span style="animation-delay:${(i*.09).toFixed(2)}s">${c===" "?"&nbsp;":esc(c)}</span>`).join("")}
+const PAGES=["home","posts","sources","reviews","stars","faq","contact"];
+function reveal(){
+  if(!("IntersectionObserver" in window)||matchMedia("(prefers-reduced-motion:reduce)").matches)return;
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.05});
+  document.querySelectorAll("#site section>*,#site .card,#site details").forEach(el=>{el.classList.add("rv");io.observe(el)});
+}
+function render(){
+  theme();
+  document.title=D.siteName+" | "+D.siteEn;
+  $("#t-logo").innerHTML=(D.logo?`<img class="logoimg" src="${esc(safeUrl(D.logo))}" alt="">`:"")+t3d(D.siteEn);
+  $("#t-foot").textContent=D.footer;
+  const N={home:D.navHome,posts:D.navPosts,sources:D.navSources,reviews:D.navReviews,stars:D.navStars,faq:D.navFaq,contact:D.navContact};
+  $("#nav").innerHTML=PAGES.map(p=>`<a href="#${p}">${esc(N[p])}</a>`).join("");
+  const posts=D.posts.map(p=>`<div class="card">${p.image?`<img src="${esc(safeUrl(p.image))}" alt="">`:""}<div class="b"><h4>${esc(p.title)}</h4><small>${esc(p.date)}</small><p>${esc(p.text)}</p>${p.source?`<p><a target="_blank" rel="noopener" href="${esc(safeUrl(p.source))}">🔗 سورس / لینک</a></p>`:""}${p.html?`<div class="embed">${p.html}</div>`:""}</div></div>`).join("");
+  const srcs=D.sources.map((s,i)=>`<div class="card" style="margin-bottom:14px"><div class="b"><h4>${esc(s.title)}</h4><pre class="code">${esc(s.code)}</pre><button class="btn sec sm" data-copysrc="${i}">📋 کپی سورس</button></div></div>`).join("");
+  const revs=D.reviews.map(r=>`<div class="card">${r.image?`<img src="${esc(safeUrl(r.image))}" alt="">`:""}<div class="b"><h4>${esc(r.name)}</h4><p>${esc(r.text)}</p></div></div>`).join("");
+  $("#site").innerHTML=`
+  <div class="pg" data-pg="home">
+    <div class="hero"${D.heroImage?` style="background-image:linear-gradient(rgba(0,0,0,.6),var(--bg)),url('${esc(safeUrl(D.heroImage))}')"`:""}>
+      ${D.logo?`<img class="herologo" src="${esc(safeUrl(D.logo))}" alt="">`:""}
+      <h1 class="logo3d">${t3d(D.heroTitle)}</h1><h2>${esc(D.heroSub)}</h2><p>${esc(D.heroText)}</p>
+      ${D.heroBtn?`<a class="btn" href="#pay">${esc(D.heroBtn)}</a>`:""}
+    </div>
+    <section id="pay"><h3>${esc(D.cryptoTitle)}</h3><div class="sub">${esc(D.cryptoText)}</div>
+      <div class="payc">
+        <div class="step">۱) ارز</div><div class="chips" id="coinChips"></div>
+        <div class="step">۲) شبکه</div><div class="chips" id="netChips"></div>
+        <div class="step">۳) آدرس کیف پول</div>
+        <div class="addrbox"><code id="addr"></code><button class="btn sec" data-copyaddr="1">📋 کپی</button></div>
+        <div class="step">۴) ${esc(D.txLabel)}</div>
+        <div class="txrow"><input id="txh" placeholder="هش تراکنش رو اینجا بچسبون" autocomplete="off"><button class="btn" id="sendTx">${esc(D.txBtn)}</button></div>
+      </div>
+    </section>
+  </div>
+  <div class="pg" data-pg="posts"><section><h3>${esc(D.postsTitle)}</h3><div class="sub">${esc(D.postsSub)}</div><div class="grid">${posts}</div></section></div>
+  <div class="pg" data-pg="sources"><section><h3>${esc(D.sourcesTitle)}</h3><div class="sub">${esc(D.sourcesSub)}</div>${srcs}</section></div>
+  <div class="pg" data-pg="reviews"><section><h3>${esc(D.reviewsTitle)}</h3><div class="sub">${esc(D.reviewsSub)}</div><div class="grid">${revs}</div></section></div>
+  <div class="pg" data-pg="stars"><section><h3>${esc(D.starsTitle)}</h3><div class="stars"><div class="big">⭐</div><p class="sub" style="margin:8px 0">${esc(D.starsText)}</p><a class="btn" target="_blank" rel="noopener" href="${esc(safeUrl(D.starsLink))}">${esc(D.starsBtn)}</a></div></section></div>
+  <div class="pg" data-pg="faq"><section><h3>${esc(D.faqTitle)}</h3><div class="sub">${esc(D.faqSub)}</div>${D.faqs.map(f=>`<details><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join("")}</section></div>
+  <div class="pg" data-pg="contact"><section><h3>${esc(D.contactTitle)}</h3><div class="sub">${esc(D.contactText)}</div><div class="contacts">${D.contacts.map(c=>`<a class="btn" target="_blank" rel="noopener" href="${esc(safeUrl(c.url))}">${esc(c.label)}</a>`).join("")}</div></section></div>`;
+  paintPay();reveal();
+}
+function paintPay(){
+  const cs=D.coins;
+  sel.ci=Math.min(sel.ci,Math.max(0,cs.length-1));
+  const c=cs[sel.ci]||{coin:"",nets:[]};
+  sel.ni=Math.min(sel.ni,Math.max(0,c.nets.length-1));
+  const n=c.nets[sel.ni]||{name:"",address:""};
+  $("#coinChips").innerHTML=cs.map((x,i)=>`<button class="chip${i===sel.ci?" on":""}" data-coin="${i}">${esc(x.coin)}</button>`).join("");
+  $("#netChips").innerHTML=c.nets.map((x,i)=>`<button class="chip${i===sel.ni?" on":""}" data-net="${i}">${esc(x.name)}</button>`).join("");
+  $("#addr").textContent=n.address||"آدرس هنوز تنظیم نشده";
+}
+function route(){
+  let p=(location.hash||"#home").slice(1);if(!PAGES.includes(p))p="home";
+  document.querySelectorAll(".pg").forEach(e=>e.classList.toggle("on",e.dataset.pg===p));
+  document.querySelectorAll("#nav a").forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+p));
+  const on=document.querySelector("#nav a.on");if(on)on.scrollIntoView({inline:"center",block:"nearest"});
+  if(p!==cur){cur=p;if(!["#pay","#admin"].includes(location.hash))scrollTo(0,0)}
+}
+addEventListener("hashchange",route);
+document.addEventListener("click",e=>{
+  const t=e.target;
+  let b;
+  if(b=t.closest("[data-coin]")){sel.ci=+b.dataset.coin;sel.ni=0;paintPay();return}
+  if(b=t.closest("[data-net]")){sel.ni=+b.dataset.net;paintPay();return}
+  if(t.closest("[data-copyaddr]")){const a=(D.coins[sel.ci]?.nets[sel.ni]||{}).address;if(!a){toast("آدرس تنظیم نشده");return}navigator.clipboard.writeText(a).then(()=>toast("آدرس کپی شد ✓"),()=>toast("کپی نشد، دستی انتخاب کن"));return}
+  if(b=t.closest("[data-copysrc]")){navigator.clipboard.writeText(D.sources[b.dataset.copysrc].code).then(()=>toast("کپی شد ✓"));return}
+  if(t.closest("#sendTx")){
+    const hash=($("#txh").value||"").trim();
+    if(!hash){toast("اول هش تراکنش رو وارد کن");return}
+    const c=D.coins[sel.ci],n=c.nets[sel.ni];
+    const msg=`پرداخت انجام شد ✅\nارز: ${c.coin}\nشبکه: ${n?n.name:"-"}\nهش تراکنش:\n${hash}`;
+    try{navigator.clipboard.writeText(msg)}catch(_){}
+    window.open(`https://t.me/${encodeURIComponent(D.tgUser)}?text=${encodeURIComponent(msg)}`,"_blank");
+    return;
+  }
+  if(t.matches(".card img")){const lb=$("#lb");lb.firstElementChild.src=t.src;lb.style.display="flex"}
+});
+$("#lb").addEventListener("click",()=>$("#lb").style.display="none");
+
+/* ================= پنل مدیریت ================= */
+const adm=$("#adm"),box=$("#admbox");
+let tab="texts";
+const get=(o,p)=>p===""?o:p.split(".").reduce((a,k)=>a?.[k],o);
+const set=(o,p,v)=>{const k=p.split(".");const l=k.pop();k.reduce((a,x)=>a[x],o)[l]=v};
+const arrOf=p=>{const k=p.split(".");const i=+k.pop();return[get(D,k.join(".")),i,k[k.length-1]]};
+const fld=(label,path,type)=>`<div class="f"><label>${label}</label>${type==="ta"?`<textarea data-p="${path}">${esc(get(D,path))}</textarea>`:`<input data-p="${path}" value="${esc(get(D,path))}">`}</div>`;
+const clr=(label,path)=>`<div class="f"><label>${label}</label><input type="color" data-p="${path}" value="${esc(get(D,path))}"></div>`;
+function imgField(label,path){const v=get(D,path)||"";const up=v.startsWith("data:");return `<div class="f"><label>${label} (آپلود یا لینک)</label><input data-p="${path}" value="${up?"(عکس آپلود شده)":esc(v)}" ${up?"readonly":""}>${v?`<img src="${esc(safeUrl(v))}">`:""}<input type="file" accept="image/*" data-img="${path}">${v?`<button class="btn sm red" data-clr="${path}">حذف عکس</button>`:""}</div>`}
+const ctl=(arr,i)=>`<div class="row"><button class="btn sm sec" data-up="${arr}.${i}">▲</button><button class="btn sm sec" data-dn="${arr}.${i}">▼</button><button class="btn sm red" data-del="${arr}.${i}">حذف</button></div>`;
+function panel(){
+  const T={texts:"متن‌ها",look:"ظاهر و رنگ",crypto:"ارز دیجیتال",posts:"پست‌ها",sources:"سورس‌ها",reviews:"رضایت",stars:"استارز",faq:"سوالات",contact:"تماس",set:"تنظیمات"};
+  let h=`<div class="row" style="justify-content:space-between;align-items:center"><b style="color:var(--o2)">پنل مدیریت</b><div><button class="btn sm" data-act="save">💾 ذخیره</button><button class="btn sm sec" data-act="close">بستن</button></div></div>
+  <div class="tabs">${Object.entries(T).map(([k,v])=>`<button data-tab="${k}" class="${tab===k?"on":""}">${v}</button>`).join("")}</div>`;
+  if(tab==="texts"){
+    h+=fld("نام سایت (فارسی)","siteName")+fld("نام انگلیسی (لوگوی ۳بعدی بالا)","siteEn")+fld("عنوان اصلی صفحه (۳بعدی)","heroTitle")+fld("زیرعنوان","heroSub")+fld("متن معرفی","heroText","ta")+fld("متن دکمه‌ی صفحه اصلی","heroBtn")
+    +fld("منو: خانه","navHome")+fld("منو: پست‌ها","navPosts")+fld("منو: سورس‌ها","navSources")+fld("منو: رضایت","navReviews")+fld("منو: استارز","navStars")+fld("منو: سوالات","navFaq")+fld("منو: تماس","navContact")
+    +fld("عنوان صفحه پست‌ها","postsTitle")+fld("توضیح پست‌ها","postsSub","ta")+fld("عنوان صفحه سورس‌ها","sourcesTitle")+fld("توضیح سورس‌ها","sourcesSub","ta")+fld("عنوان صفحه رضایت","reviewsTitle")+fld("توضیح رضایت","reviewsSub","ta")+fld("متن فوتر","footer");
+  }
+  if(tab==="look"){
+    h+=imgField("لوگو","logo")+imgField("عکس بنر بالای صفحه","heroImage")
+    +clr("رنگ اصلی سایت","theme.c1")+clr("رنگ دوم (روشن‌تر)","theme.c2")+clr("رنگ پس‌زمینه","theme.bg")+clr("رنگ کارت‌ها","theme.card")
+    +`<div class="f"><label>مدل دکمه‌ها</label><select data-p="theme.btn">${[["round","گوشه‌گرد"],["pill","قرصی"],["square","تخت و تیز"],["outline","فقط حاشیه"],["glow","درخشان"],["d3","سه‌بعدی"]].map(([v,t])=>`<option value="${v}"${D.theme.btn===v?" selected":""}>${t}</option>`).join("")}</select></div>
+    <button class="btn sm sec" data-act="rtheme">بازگشت رنگ‌ها به پیش‌فرض</button>`;
+  }
+  if(tab==="crypto"){
+    h+=fld("عنوان بخش","cryptoTitle")+fld("توضیح","cryptoText","ta")+fld("یوزرنیم تلگرام برای دریافت هش (بدون @)","tgUser")+fld("برچسب فیلد هش","txLabel")+fld("متن دکمه‌ی ارسال هش","txBtn")+`<button class="btn sm" data-add="coins">+ ارز جدید</button>`;
+    D.coins.forEach((c,i)=>{h+=`<div class="it"><b>ارز ${i+1}</b>${fld("نام ارز",`coins.${i}.coin`)}<button class="btn sm" data-add="coins.${i}.nets">+ شبکه جدید</button>`;
+      c.nets.forEach((n,j)=>h+=`<div class="it">${fld("نام شبکه",`coins.${i}.nets.${j}.name`)}${fld("آدرس کیف پول این شبکه",`coins.${i}.nets.${j}.address`)}${ctl(`coins.${i}.nets`,j)}</div>`);
+      h+=ctl("coins",i)+`</div>`});
+  }
+  if(tab==="posts"){
+    h+=`<button class="btn sm" data-add="posts">+ پست جدید</button>`;
+    D.posts.forEach((p,i)=>h+=`<div class="it"><b>پست ${i+1}</b>${fld("عنوان",`posts.${i}.title`)}${fld("تاریخ",`posts.${i}.date`)}${fld("متن",`posts.${i}.text`,"ta")}${imgField("عکس",`posts.${i}.image`)}${fld("لینک سورس",`posts.${i}.source`)}${fld("کد HTML / امبد دلخواه",`posts.${i}.html`,"ta")}${ctl("posts",i)}</div>`);
+  }
+  if(tab==="sources"){
+    h+=`<button class="btn sm" data-add="sources">+ سورس جدید</button>`;
+    D.sources.forEach((p,i)=>h+=`<div class="it"><b>سورس ${i+1}</b>${fld("عنوان",`sources.${i}.title`)}${fld("کد",`sources.${i}.code`,"ta")}${ctl("sources",i)}</div>`);
+  }
+  if(tab==="reviews"){
+    h+=`<button class="btn sm" data-add="reviews">+ رضایت جدید</button>`;
+    D.reviews.forEach((p,i)=>h+=`<div class="it"><b>رضایت ${i+1}</b>${fld("نام",`reviews.${i}.name`)}${fld("متن",`reviews.${i}.text`,"ta")}${imgField("عکس",`reviews.${i}.image`)}${ctl("reviews",i)}</div>`);
+  }
+  if(tab==="stars")h+=fld("عنوان صفحه","starsTitle")+fld("توضیح","starsText","ta")+fld("متن دکمه","starsBtn")+fld("لینک (https://t.me/یوزرنیم)","starsLink");
+  if(tab==="faq"){
+    h+=fld("عنوان صفحه","faqTitle")+fld("توضیح","faqSub","ta")+`<button class="btn sm" data-add="faqs">+ سوال جدید</button>`;
+    D.faqs.forEach((p,i)=>h+=`<div class="it"><b>سوال ${i+1}</b>${fld("سوال",`faqs.${i}.q`)}${fld("پاسخ",`faqs.${i}.a`,"ta")}${ctl("faqs",i)}</div>`);
+  }
+  if(tab==="contact"){
+    h+=fld("عنوان صفحه","contactTitle")+fld("توضیح","contactText","ta")+`<button class="btn sm" data-add="contacts">+ راه ارتباطی جدید</button>`;
+    D.contacts.forEach((p,i)=>h+=`<div class="it"><b>لینک ${i+1}</b>${fld("نوشته‌ی دکمه",`contacts.${i}.label`)}${fld("لینک",`contacts.${i}.url`)}${ctl("contacts",i)}</div>`);
+  }
+  if(tab==="set"){
+    h+=`<div class="f"><label>رمز جدید پنل (پیش‌فرض: admin)</label><input id="np" placeholder="رمز جدید"></div><button class="btn sm" data-act="np">تغییر رمز</button>
+    <hr style="margin:14px 0;border-color:#333">
+    <button class="btn sm" data-act="exp">⬇ دانلود data.json</button> <button class="btn sm sec" data-act="ld">⟳ بارگذاری از data.json سایت</button> <label class="btn sm sec" style="cursor:pointer">⬆ بازگردانی از فایل<input type="file" accept=".json" id="imp" hidden></label> <button class="btn sm red" data-act="reset">ریست کامل</button>
+    <p class="sub" style="margin-top:12px">تغییرات اول فقط در مرورگر خودت ذخیره می‌شود. برای نمایش به همه: «دانلود data.json» را بزن و فایل را با همین نام در ریپو گیت‌هاب (کنار index.html) آپلود کن.</p>`;
+  }
+  box.innerHTML=h;
+}
+function openAdmin(){adm.style.display="block";panel()}
+function login(){
+  const p=prompt("رمز مدیر:");if(p===null)return;
+  if(p!==(localStorage.getItem("qd_pass")||"admin")){toast("رمز اشتباه است");return}
+  openAdmin();
+}
+$("#admBtn").addEventListener("click",login);
+$("#adminOpen").addEventListener("click",e=>{if(e.detail===3)login()});
+function resizeImg(file,cb){
+  const rd=new FileReader();
+  rd.onload=()=>{const im=new Image();im.onload=()=>{const m=1000,s=Math.min(1,m/Math.max(im.width,im.height));const c=document.createElement("canvas");c.width=im.width*s;c.height=im.height*s;c.getContext("2d").drawImage(im,0,0,c.width,c.height);cb(c.toDataURL("image/jpeg",.8))};im.src=rd.result};
+  rd.readAsDataURL(file);
+}
+const NEW={faqs:()=>({q:"",a:""}),contacts:()=>({label:"",url:""}),sources:()=>({title:"",code:""}),posts:()=>({title:"",text:"",image:"",source:"",html:"",date:new Date().toLocaleDateString("fa-IR")}),reviews:()=>({name:"",text:"",image:""}),coins:()=>({coin:"",nets:[{name:"",address:""}]}),nets:()=>({name:"",address:""})};
+box.addEventListener("input",e=>{const t=e.target,p=t.dataset.p;if(p&&!t.readOnly){set(D,p,t.value);if(p.startsWith("theme."))theme()}});
+box.addEventListener("change",e=>{
+  const t=e.target;
+  if(t.dataset.img&&t.files[0])resizeImg(t.files[0],d=>{set(D,t.dataset.img,d);panel()});
+  if(t.id==="imp"&&t.files[0]){const r=new FileReader();r.onload=()=>{try{D={...clone(DEF),...JSON.parse(r.result)};norm();theme();panel();toast("بازگردانی شد، ذخیره بزن")}catch(_){toast("فایل نامعتبر")}};r.readAsText(t.files[0])}
+});
+box.addEventListener("click",async e=>{
+  const t=e.target.closest("button");if(!t)return;const d=t.dataset;
+  if(d.tab){tab=d.tab;panel()}
+  else if(d.add){get(D,d.add).unshift(NEW[d.add.split(".").pop()]());panel()}
+  else if(d.del){const[A,i]=arrOf(d.del);if(confirm("حذف شود؟")){A.splice(i,1);panel()}}
+  else if(d.up||d.dn){const[A,i]=arrOf(d.up||d.dn);const n=i+(d.up?-1:1);if(n>=0&&n<A.length){[A[i],A[n]]=[A[n],A[i]];panel()}}
+  else if(d.clr){set(D,d.clr,"");panel()}
+  else if(d.act==="save")save();
+  else if(d.act==="close"){adm.style.display="none";render();route()}
+  else if(d.act==="rtheme"){D.theme=clone(DEF.theme);theme();panel()}
+  else if(d.act==="np"){const v=$("#np").value;if(v){localStorage.setItem("qd_pass",v);toast("رمز تغییر کرد (فقط روی این مرورگر)")}}
+  else if(d.act==="exp"){const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify(D)],{type:"application/json"}));a.download="data.json";a.click()}
+  else if(d.act==="ld"){try{const r=await fetch("data.json?"+Date.now());D={...clone(DEF),...await r.json()};norm();theme();panel();toast("بارگذاری شد، ذخیره بزن")}catch(_){toast("data.json پیدا نشد")}}
+  else if(d.act==="reset"){if(confirm("همه چیز پاک و به پیش‌فرض برگردد؟")){D=clone(DEF);theme();panel()}}
+});
+load();
+</script>
+</body>
+</html>
